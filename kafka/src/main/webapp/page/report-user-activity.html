@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户活动信息上传</title>
+    <script type="text/javascript" src="/page/jquery.js"></script>
+</head>
+
+<body>
+<div>
+    <div>
+        <input type="text" report_click_data="report-serch-btn"/>
+    </div>
+    <div>
+        <textarea id="answer" cols="30" rows="10" report_click_data="report-serch-btn"></textarea>
+    </div>
+    <button report_click="report-serch-btn">搜索</button>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/page/report.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var userId = "12345";
+
+        r_reportPage({page: window.location.href, userId:userId}, {title: "商品主页面"});
+
+        r_reportClick({page: window.location.href, userId:userId}, {title: "商品主页面"});
+    });
+
+</script>

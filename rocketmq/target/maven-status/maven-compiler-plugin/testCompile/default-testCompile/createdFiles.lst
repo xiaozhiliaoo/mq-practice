@@ -1,0 +1,5 @@
+org\study\mq\rocketMQ\spring\SpringConsumerTest.class
+org\study\mq\rocketMQ\dt\TestDT.class
+org\study\mq\rocketMQ\order\OrderProducerTest.class
+org\study\mq\rocketMQ\order\OrderConsumerTest.class
+org\study\mq\rocketMQ\spring\SpringProducerTest.class

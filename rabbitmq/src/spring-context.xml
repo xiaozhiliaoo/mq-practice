@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/rabbit
+       http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <bean id="fooMessageListener" class="org.study.mq.rabbitMQ.spring.FooMessageListener"/>
+
+    <!--配置连接-->
+    <rabbit:connection-factory id="connectionFactory" host="127.0.0.1" port="5672"
+                               username="guest" password="guest" virtual-host="/" requested-heartbeat="60"/>
+
+    <!--配置 RabbitTemplate -->
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory"
+                     exchange="myExchange" routing-key="foo.bar"/>
+
+    <!--配置 RabbitAdmin -->
+    <rabbit:admin connection-factory="connectionFactory"/>
+
+    <!--配置队列名-->
+    <rabbit:queue name="myQueue"/>
+
+    <!--配置 topic 类型 Exchange -->
+    <rabbit:topic-exchange name="myExchange">
+        <rabbit:bindings>
+            <rabbit:binding queue="myQueue" pattern="foo.*"/>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+
+    <!--配置监听-->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener ref="fooMessageListener" queue-names="myQueue" />
+    </rabbit:listener-container>
+</beans>

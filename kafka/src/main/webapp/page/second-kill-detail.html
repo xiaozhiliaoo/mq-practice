@@ -1,0 +1,114 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>秒杀商品详情页</title>
+    <link rel="stylesheet" type="text/css" href="/page/bootstrap.css"/>
+    <script type="text/javascript" src="/page/jquery.js"></script>
+    <script type="text/javascript" src="/page/layer/layer.js"></script>
+</head>
+<style type="text/css">
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    #goodslist td {
+        border-top: 1px solid #39503f61;
+    }
+</style>
+
+
+<body>
+<div class="panel panel-default" style="height:100%;background-color:rgba(222,222,222,0.8)">
+    <table class="table">
+        <tr>
+            <td>商品名称</td>
+
+            <td colspan="3">Apple iPhone X 256GB 深空灰</td>
+        </tr>
+        <tr>
+            <td>商品图片</td>
+            <td colspan="3"><img width="200" height="200" src="/page/iphonex256.jpeg"/></td>
+        </tr>
+        <tr>
+            <td>商品原价</td>
+            <td colspan="3">¥ 10661.00</td>
+        </tr>
+        <tr>
+            <td>秒杀价</td>
+            <td colspan="3">¥ 3661.00</td>
+        </tr>
+        <tr>
+            <td>库存数量</td>
+            <td colspan="3" id="stock">3</td>
+        </tr>
+        <tr>
+            <td>活动开始时间</td>
+            <td>
+                <div class="text-primary">2018-05-02 15:18:00</div>
+            </td>
+            <td>
+                <div class="text-success" id="activities"></div>
+            </td>
+            <td>
+                <input type="hidden" id="goodsId" value="123456"/>
+                <div class="row">
+                    <div class="form-inline">
+                        <button class="btn btn-primary" type="button" id="buyButton" onclick="secondKill()">立即秒杀
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    function showLoading() {
+        return layer.msg("处理中...", {icon: 16, shade: [0.5, '#f5f5f5'], scrollbar: false, offset: '0px', time: 10000});
+    }
+
+    function secondKill() {
+        var goodsId = $("#goodsId").val();
+        showLoading();
+        $.ajax({
+            url: "/buy",
+            type: "GET",
+            data: {
+                goodsId: goodsId
+            },
+            success: function (data) {
+                layer.msg(data.msg);
+                if(data.buyResult){
+                    $("#stock").text(0);
+                    $("#activities").text("秒杀活动结束");
+                    $("#buyButton").attr("disabled", "true");
+                }
+            },
+            error: function () {
+                layer.msg("访问服务器错误，请联系管理员！");
+            }
+        });
+    }
+
+    $(function () {
+        //页面初始化，设置活动内容描述、秒杀按钮是否可用、商品库存等
+        $.ajax({
+            async: false,
+            url: "/getStock",
+            type: "GET",
+            success: function (data) {
+                $("#goodsId").val(data.goodsId);
+                $("#stock").text(data.goodsStock);
+                $("#activities").text("秒杀活动火热进行中");
+                $("#buyButton").removeAttr("disabled");
+            },
+            error: function () {
+                layer.msg("访问服务器错误，请联系管理员！");
+            }
+        });
+    });
+
+</script>

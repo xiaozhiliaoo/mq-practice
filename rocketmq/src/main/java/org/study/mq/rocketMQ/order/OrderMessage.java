@@ -1,5 +1,6 @@
 package org.study.mq.rocketMQ.order;
 
+
 public class OrderMessage {
 
     private int id;//订单ID

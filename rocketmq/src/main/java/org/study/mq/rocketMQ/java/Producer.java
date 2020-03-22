@@ -4,6 +4,7 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
+import org.config.RocketMQConfig;
 
 public class Producer {
 
@@ -16,8 +17,9 @@ public class Producer {
         // 消息没有存储成功是否发送到另外一个broker
         producer.setRetryAnotherBrokerWhenNotStoreOK(true);
 
+
         //指定 NameServer 地址
-        producer.setNamesrvAddr("localhost:9876");
+        producer.setNamesrvAddr(RocketMQConfig.NAME_SERVER_ADDR);
 
         //初始化 Producer，整个应用生命周期内只需要初始化一次
         producer.start();

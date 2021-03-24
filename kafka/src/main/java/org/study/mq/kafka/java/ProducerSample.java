@@ -18,7 +18,7 @@ public class ProducerSample {
         producer.send(new ProducerRecord(topic, "idea-key2", "java-message 1"));
         producer.send(new ProducerRecord(topic, "idea-key2", "java-message 2"));
         producer.send(new ProducerRecord(topic, "idea-key2", "java-message 3"));
-
+        System.out.println("send done");
         producer.close();
     }
 

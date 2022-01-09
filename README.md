@@ -1,2 +1,2 @@
 # mq-practice
-mq practice,rabbitmq,rocketmq,activemq
+mq practice,includes rabbitmq,rocketmq,activemq,kafka,pulsar

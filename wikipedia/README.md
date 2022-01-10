@@ -1,5 +1,10 @@
 # Person
+[Jay Kreps](https://www.oreilly.com/people/jay-kreps/)
 
+[Neha Narkhede](https://en.wikipedia.org/wiki/Neha_Narkhede)
+[Neha Narkhede's Blog](https://www.nehanarkhede.com/)
+
+[Tyler Akidau](https://www.oreilly.com/people/tyler-akidau/)
 
 # articles
 

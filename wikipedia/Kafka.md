@@ -40,3 +40,4 @@ https://engineering.linkedin.com/distributed-systems/log-what-every-software-eng
 
 [Design Kafka](https://kafka.apache.org/documentation/#design)
 
+[ksqldb](https://ksqldb.io/)

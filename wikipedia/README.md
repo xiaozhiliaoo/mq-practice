@@ -1,8 +1,11 @@
 # Person
 [Jay Kreps](https://www.oreilly.com/people/jay-kreps/)
+[Jay Kreps's Blog](https://engineering.linkedin.com/blog/authors/j/jay-kreps)
 
 [Neha Narkhede](https://en.wikipedia.org/wiki/Neha_Narkhede)
 [Neha Narkhede's Blog](https://www.nehanarkhede.com/)
+
+[Jun Rao]()
 
 [Tyler Akidau](https://www.oreilly.com/people/tyler-akidau/)
 

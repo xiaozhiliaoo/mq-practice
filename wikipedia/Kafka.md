@@ -29,9 +29,14 @@
 
 # Product
 
+Apache Kafka, Samza, Voldemort, Azkaban
 
 
 # Book
+
+
+# Video
+[Youtube-Confluent](https://www.youtube.com/channel/UCmZz-Gj3caLLzEWBtbYUXaA)
 
 
 # Site

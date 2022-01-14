@@ -65,36 +65,3 @@ bin/kafka-console-consumer.sh --bootstrap-server=localhost:9092 --topic tests-to
 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
 
 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test-group1
-
-
-------------------------------------------------
-
-
-test：
-
-bin/kafka-consumer-groups.sh --bootstrap-server ns014.corp.youdao.com:9092 --group courseop-finance-settle --topic courseop_finance_settle --reset-offsets --to-latest –execute
-
-
-
-
-online：
-
-bin/kafka-broker-api-versions.sh --bootstrap-server th011.corp.yodao.com:9092
-
-bin/kafka-consumer-groups.sh --bootstrap-server th012.corp.yodao.com:9092 --group courseop-finance-settle  --describe
-
-
-
-
-bin/kafka-consumer-groups.sh --bootstrap-server th012.corp.yodao.com:9092,th011.corp.yodao.com:9092,zj059.corp.yodao.com:9092,zj060.corp.yodao.com:9092,hd045.corp.yodao.com:9092 --group courseop-finance-settle  --describe
-
-bin/kafka-consumer-groups.sh --bootstrap-server th012.corp.yodao.com:9092,th011.corp.yodao.com:9092,zj059.corp.yodao.com:9092,zj060.corp.yodao.com:9092,hd045.corp.yodao.com:9092 --group courseop-finance-settle --topic courseop_finance_settle --reset-offsets --to-latest –execute
-
-
-
-bin/kafka-consumer-groups.sh --bootstrap-server th012.corp.yodao.com:9092 --group courseop-finance-settle --topic courseop_finance_settle --reset-offsets –-to-latest –execute
-
-
-
-不加-–execute 只是展示，不会真实调整。
-bin/kafka-consumer-groups.sh --bootstrap-server th012.corp.yodao.com:9092,th011.corp.yodao.com:9092,zj059.corp.yodao.com:9092,zj060.corp.yodao.com:9092,hd045.corp.yodao.com:9092 --group courseop-finance-settle --topic courseop_finance_settle --reset-offsets –-to-latest -–execute

@@ -65,3 +65,9 @@ bin/kafka-console-consumer.sh --bootstrap-server=localhost:9092 --topic tests-to
 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
 
 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test-group1
+
+
+
+bin/kafka-consumer-groups.sh --bootstrap-server th011.corp.yodao.com:9092 --describe --group logistics --members --verbose
+
+bin/kafka-topics.sh --bootstrap-server th011.corp.yodao.com:9092 --topic courseop-event-bus --describe

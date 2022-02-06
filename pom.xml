@@ -15,6 +15,7 @@
         <module>kafka</module>
         <module>jms</module>
         <module>my-mq</module>
+        <module>pulsar</module>
     </modules>
 
 

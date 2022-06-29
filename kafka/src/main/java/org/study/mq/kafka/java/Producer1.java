@@ -7,13 +7,14 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.study.mq.kafka.java.Config.IP;
 import static org.study.mq.kafka.java.Const.TOPIC;
 
 public class Producer1 {
 
     public static void main(String[] args) {
         Map<String, Object> props = new HashMap<>();
-        props.put("bootstrap.servers", "192.168.56.101:9092");
+        props.put("bootstrap.servers", IP);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("group.id", "testGroup1");

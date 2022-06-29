@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
 
+import static org.study.mq.kafka.java.Config.IP;
 import static org.study.mq.kafka.java.Const.TOPIC;
 
 public class Consumer1 {
@@ -14,7 +15,7 @@ public class Consumer1 {
     public static void main(String[] args) throws InterruptedException {
 
         Properties props = new Properties();
-        props.put("bootstrap.servers", "192.168.56.101:9092");
+        props.put("bootstrap.servers", IP);
         props.put("group.id", "testGroup1");
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");

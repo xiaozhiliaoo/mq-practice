@@ -8,4 +8,4 @@ PacificA: Replication in Log-Based Distributed Storage Systems
 
 ## Kafka
 
-https://kafka.apache.org/books-and-papers
+理解Kafka必读：https://kafka.apache.org/books-and-papers

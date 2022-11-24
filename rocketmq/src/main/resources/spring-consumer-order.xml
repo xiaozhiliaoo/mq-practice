@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <bean id="orderMessageListener" class="org.study.mq.rocketMQ.order.OrderMessageListener" />
+    <bean id="orderMessageListener" class="org.lili.mq.rocketmq.order.OrderMessageListener" />
 
-    <bean id="consumer" class="org.study.mq.rocketMQ.order.OrderConsumer" init-method="init" destroy-method="destroy">
+    <bean id="consumer" class="org.lili.mq.rocketmq.order.OrderConsumer" init-method="init" destroy-method="destroy">
         <constructor-arg name="nameServerAddr" value="localhost:9876"/>
         <constructor-arg name="consumerGroupName" value="order_consumer_group"/>
         <constructor-arg name="topicName" value="topic_example_order" />

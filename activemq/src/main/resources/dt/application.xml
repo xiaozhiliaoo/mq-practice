@@ -26,12 +26,12 @@
             <ref bean="dataSource"></ref>
         </property>
     </bean>
-    <bean id="userDao" class="org.study.mq.activeMQ.dt.dao.UserDao">
+    <bean id="userDao" class="org.lili.mq.activemq.dt.dao.UserDao">
         <property name="jdbcTemplate">
             <ref bean="jdbcTemplate"></ref>
         </property>
     </bean>
-    <bean id="userEventDao" class="org.study.mq.activeMQ.dt.dao.UserEventDao">
+    <bean id="userEventDao" class="org.lili.mq.activemq.dt.dao.UserEventDao">
         <property name="jdbcTemplate">
             <ref bean="jdbcTemplate"></ref>
         </property>
@@ -49,12 +49,12 @@
             <ref bean="dataSource2"></ref>
         </property>
     </bean>
-    <bean id="pointDao" class="org.study.mq.activeMQ.dt.dao.PointDao">
+    <bean id="pointDao" class="org.lili.mq.activemq.dt.dao.PointDao">
         <property name="jdbcTemplate">
             <ref bean="jdbcTemplate2"></ref>
         </property>
     </bean>
-    <bean id="pointEventDao" class="org.study.mq.activeMQ.dt.dao.PointEventDao">
+    <bean id="pointEventDao" class="org.lili.mq.activemq.dt.dao.PointEventDao">
         <property name="jdbcTemplate">
             <ref bean="jdbcTemplate2"></ref>
         </property>
@@ -75,7 +75,7 @@
         <property name="connectionFactory" ref="cachedConnectionFactory"/>
         <property name="defaultDestination" ref="topicDistributedTransaction"/>
     </bean>
-    <bean id="pointMessageListener" class="org.study.mq.activeMQ.dt.listener.PointMessageListener"/>
+    <bean id="pointMessageListener" class="org.lili.mq.activemq.dt.listener.PointMessageListener"/>
     <bean id="topicContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="cachedConnectionFactory"/>

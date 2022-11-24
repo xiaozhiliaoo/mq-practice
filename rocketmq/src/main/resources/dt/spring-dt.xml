@@ -26,7 +26,7 @@
             <ref bean="dataSource"></ref>
         </property>
     </bean>
-    <bean id="userDao" class="org.study.mq.rocketMQ.dt.dao.UserDao">
+    <bean id="userDao" class="org.lili.mq.rocketmq.dt.dao.UserDao">
         <property name="jdbcTemplate">
             <ref bean="jdbcTemplate"></ref>
         </property>
@@ -44,16 +44,16 @@
             <ref bean="dataSource2"></ref>
         </property>
     </bean>
-    <bean id="pointDao" class="org.study.mq.rocketMQ.dt.dao.PointDao">
+    <bean id="pointDao" class="org.lili.mq.rocketmq.dt.dao.PointDao">
         <property name="jdbcTemplate">
             <ref bean="jdbcTemplate2"></ref>
         </property>
     </bean>
 
     <!--消息生产者-->
-    <bean id="userLocalTransactionListener" class="org.study.mq.rocketMQ.dt.message.UserLocalTransactionListener" />
+    <bean id="userLocalTransactionListener" class="org.lili.mq.rocketmq.dt.message.UserLocalTransactionListener" />
 
-    <bean id="producer" class="org.study.mq.rocketMQ.dt.message.TransactionSpringProducer" init-method="init" destroy-method="destroy">
+    <bean id="producer" class="org.lili.mq.rocketmq.dt.message.TransactionSpringProducer" init-method="init" destroy-method="destroy">
         <constructor-arg name="nameServerAddress" value="localhost:9876"/>
         <constructor-arg name="producerGroupName" value="transaction_spring_producer_group"/>
         <constructor-arg name="corePoolSize" value="2"/>
@@ -63,8 +63,8 @@
     </bean>
 
     <!--消息消费者-->
-    <bean id="messageListener" class="org.study.mq.rocketMQ.dt.message.TransactionMessageListener" />
-    <bean id="consumer" class="org.study.mq.rocketMQ.dt.message.TransactionSpringConsumer" init-method="init" destroy-method="destroy">
+    <bean id="messageListener" class="org.lili.mq.rocketmq.dt.message.TransactionMessageListener" />
+    <bean id="consumer" class="org.lili.mq.rocketmq.dt.message.TransactionSpringConsumer" init-method="init" destroy-method="destroy">
         <constructor-arg name="nameServerAddress" value="localhost:9876"/>
         <constructor-arg name="consumerGroupName" value="transaction_consumer_group4"/>
         <constructor-arg name="topicName" value="distributed_transaction_spring_topic" />

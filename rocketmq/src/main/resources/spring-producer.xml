@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <bean id="producer" class="org.study.mq.rocketMQ.spring.SpringProducer" init-method="init" destroy-method="destroy">
+    <bean id="producer" class="org.lili.mq.rocketmq.spring.SpringProducer" init-method="init" destroy-method="destroy">
         <constructor-arg name="nameServerAddr" value="localhost:9876"/>
         <constructor-arg name="producerGroupName" value="spring_producer_group"/>
     </bean>

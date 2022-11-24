@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/rabbit
        http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
 
-    <bean id="mailMessageListener" class="org.study.mq.rabbitMQ.async.MailMessageListener"/>
+    <bean id="mailMessageListener" class="org.lii.mq.rabbitmq.async.MailMessageListener"/>
 
     <!--配置连接-->
     <rabbit:connection-factory id="connectionFactory" host="127.0.0.1" port="5672"

@@ -22,6 +22,10 @@ Research on message queue: activemq,rabbitmq,rocketmq,kafka,pulsar
 
 [百科](./wikipedia)
 
+## Slides
+
+[Slides](./slides)
+
 ## 产品定位
 
 ### 开源

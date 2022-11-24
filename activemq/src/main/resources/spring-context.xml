@@ -43,11 +43,11 @@
         <constructor-arg index="0" value="spring-topic"/>
     </bean>
 
-    <bean id="queueListener" class="org.study.mq.activeMQ.spring.QueueListener"/>
+    <bean id="queueListener" class="org.lili.mq.activemq.spring.QueueListener"/>
 
-    <bean id="topic1Listener" class="org.study.mq.activeMQ.spring.Topic1Listener"/>
+    <bean id="topic1Listener" class="org.lili.mq.activemq.spring.Topic1Listener"/>
 
-    <bean id="topic2Listener" class="org.study.mq.activeMQ.spring.Topic2Listener"/>
+    <bean id="topic2Listener" class="org.lili.mq.activemq.spring.Topic2Listener"/>
 
     <bean id="queueContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
